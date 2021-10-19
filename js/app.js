@@ -12,30 +12,23 @@ var isPortrait = true;
 var happyLevel;
 var imageData;
 var mosaicSize;
+// スマホのフロントカメラを使用
 var constraints = {
   audio: false,
-  video: {
-    // スマホのバックカメラを使用
-    facingMode: 'environment'
-  }
+  video: true
 };
 var track = new clm.tracker({
   useWebGL: true
 });
 var emotionClassifier = new emotionClassifier();
 var roseImage = new Image;
-// 画像のパス
-var portraitImagePath = [
+/*画像のパス*/
+/*var portraitImagePath = [
   './img/roses_portrait_1.png',
   './img/roses_portrait_2.png',
   './img/roses_portrait_3.png'
 ];
 var landscapeImagePath = [
-  './img/roses_portrait_1.png',
-  './img/roses_portrait_2.png',
-  './img/roses_portrait_3.png'
-];
-/*var landscapeImagePath = [
   './img/roses_landscape_1.png',
   './img/roses_landscape_2.png',
   './img/roses_landscape_3.png'
@@ -82,6 +75,7 @@ function adjustProportions() {
   canvas.height = video.height;
 }
 
+/*スナップショット*/
 function displaySnapshot() {
   var snapshot = new Image();
 
@@ -105,10 +99,10 @@ function drawLoop() {
     // 顔のパーツの現在位置が存在
     determineEmotion();
     if (isSad) {
-      createMosaic(mosaicSize);
+      //createMosaic(mosaicSize);
     }
     if (isHappy) {
-      makeRosesBloom(happyLevel);
+      //makeRosesBloom(happyLevel);
     }
   } else {
     initDisplayEmotion();
@@ -174,8 +168,8 @@ function initDisplayEmotion() {
   happyText.innerText = 0;
   happyText.parentNode.style.width = 100 + 'px';
 }
-
-function makeRosesBloom(level) {
+/*バラの画像描画処理*/
+/*function makeRosesBloom(level) {
   for (i = 0; i < level; i++) {
     if (isPortrait) {
       roseImage.src = portraitImagePath[i];
@@ -185,8 +179,8 @@ function makeRosesBloom(level) {
     context.drawImage(roseImage, 0, 0, canvas.width, canvas.height);
   }
 }
-
-function createMosaic(mosaicSize) {
+/*モザイクの処理*/
+/*function createMosaic(mosaicSize) {
   for (y = 0; y < canvas.height; y = y + mosaicSize) {
     for (x = 0; x < canvas.width; x = x + mosaicSize) {
       // getImageData で取得したピクセル情報から該当するピクセルのカラー情報を取得
@@ -198,7 +192,7 @@ function createMosaic(mosaicSize) {
       context.fillRect(x, y, x + mosaicSize, y + mosaicSize);
     }
   }
-}
+}*/
 
 pModel.shapeModel.nonRegularizedVectors.push(9);
 pModel.shapeModel.nonRegularizedVectors.push(11);
@@ -222,5 +216,6 @@ if (navigator.mediaDevices) {
   window.alert('非対応ブラウザです');
 }
 
-// 保存ボタンを押したら実行
+/*保存ボタンを押したら実行*/
+//htmlのbuttonIDが対象になる
 button.addEventListener('click', displaySnapshot);

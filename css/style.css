@@ -3,10 +3,12 @@
 html{
     overflow: auto;
 }
-div > h1{
-    display: inline;
+body{
+    margin: 0px;
+	padding: 0px;
 }
 nav ul{
+    padding-right: 10px;
     list-style-type: none;
     font-size: 0px;
     text-align: right;
@@ -17,17 +19,17 @@ nav li{
 	padding-right: 5px;
 	display: inline;
 	border-right: solid 1px black;
-	font-size: 16px;
+	font-size: 20px;
 	font-family: sans-serif;
 }
 nav li:first-child {
 	border-left: solid 1px black;
 }
-nav li a:visited {
-	color: black;
-}
 .title{
+    margin-top: 30px;
+    margin-bottom: 10px;
     text-align: center;
+    font-size: 40px;
 }
 figure{
     text-align: center;

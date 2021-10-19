@@ -8,17 +8,41 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", HelveticaNeue, "Segoe UI", "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
 
+nav ul{
+  padding-right: 10px;
+  list-style-type: none;
+  font-size: 0px;
+  text-align: right;
+}
+nav li{
+  margin: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  display: inline;
+  border-right: solid 1px black;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+nav li:first-child {
+  border-left: solid 1px black;
+}
+.title{
+  margin-top: 30px;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 40px;
+}
+
 .wrapper {
   width: 100%;
   height: auto;
   min-height: 100%;
-  background: #000;
   position: relative;
   overflow: hidden;
 }
 .content {
   width: 100%;
-  max-width: 520px;
+  max-width: 800px;
   margin: 0 auto;
   padding-top: 15px;
 }
@@ -47,7 +71,6 @@ body {
 }
 
 .assist {
-  margin: 15px auto 0;
   padding: 15px 20px 20px;
   background: #fff;
   border-radius: 2px;
@@ -77,10 +100,12 @@ body {
 .result_data.result_data--happy {
   background: #e3b8fc;
 }
-
+.buttoncase{
+  text-align: center;
+}
 .button {
   width: 100px;
-  display: block;
+  display: inline;
   padding: 12px;
   border-radius: 2px;
   font-weight: bold;
